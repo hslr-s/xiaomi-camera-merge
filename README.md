@@ -12,12 +12,12 @@
 
 ## 开始
 
-### 1. 搭建ffmpeg环境（如果你有docker环境，请直接向下看docker运行）
+### 编译和运行
+
+#### 1. 搭建ffmpeg环境（如果你有docker环境，请直接向下看docker运行）
 根据自身系统查找教程即可
 
-### 2. 编译和运行
-
-#### 编译（保证已经搭建完成go环境）
+#### 2. 编译（保证已经搭建完成go环境）
 
 ```
 # linux
@@ -46,7 +46,7 @@ go run -o xiaomi_camera_merge.exe main.go
 
 ```
 
-## 3. docker运行（推荐）
+### docker运行（推荐）
 
 
 运行参数说明
