@@ -2,8 +2,21 @@
 
 > 由于小米摄像头保存的视频传到NAS都是一分钟一个文件，而且NAS上保存的视频不支持在APP回看，所以回看相当的不方便。所以百度查找到一个合并视频文件的方式，根据[大神的开发的windows脚本](./小米摄像头录像合并脚本.bat)开发成golang版本，跨平台使用，支持docker。
 
+## 项目开源地址及最新教程
+项目地址：https://github.com/hslr-s/xiaomi-camera-merge
 
-## 说明
+博客地址：https://blog.enianteam.com/u/sun/content/239
+
+哔哩哔哩视频：https://www.bilibili.com/video/BV1rN4y1k7K3/
+
+## 软件下载
+天翼云盘：https://cloud.189.cn/web/share?code=raANbiiA3QRb （访问码：qqy4）
+
+Github：https://github.com/hslr-s/xiaomi-camera-merge/releases
+
+## 实现原理和说明
+go程序通过代码，调用开源`ffmpeg`（用于生成处理多媒体数据的各类库和程序）程序来实现视频的合并转存。将一分钟一个视频合并为以小时为一个视频进行保存按天保存
+
 **❗温馨提示：首次使用，请先拷贝出部分目录测试一下。技术有价,数据无价。若造成数据丢失，作者不负责哦❗**
 
 程序会在视频文件夹中生成以年为名的的文件夹和日志文件夹（xiaomi-video-merge-log），每次执行的日志会以日期命名的.log文件。可以使用记事本方式打开查看记录。
@@ -11,11 +24,11 @@
 
 视频文件合并完成后是按每小时一个视频储存的`.mov`格式的视频文件
 
+合并前后的对比图
+
 ![](./doc/screenshot20231024.png)
 
-## 开始
-
-### 编译和运行
+## 编译运行
 
 #### 1. 搭建ffmpeg环境（如果你有docker环境，请直接向下看docker运行）
 根据自身系统查找教程即可
@@ -50,7 +63,7 @@ go run -o xiaomi_camera_merge.exe main.go
 
 ```
 
-### docker运行（推荐）
+## docker运行（推荐）
 
 
 运行参数说明
